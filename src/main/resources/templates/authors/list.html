@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleafe.org">
+
+
+<head>
+<title>Author list</title>
+</head>
+
+<body>
+<h1>Author List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Books</th>
+    </tr>
+    <tr th:each="author : ${authors}">
+        <td th:text="${author.id}">123</td>
+        <td th:text="${author.firstName}  + ' ' + ${author.lastName}">Jim Brown</td>
+        <td>
+            <ul th:each="book: ${author.books}">
+                <li th:text="${book.title}">Book 1</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+
+</html>
